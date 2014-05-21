@@ -1,0 +1,11 @@
+html
+    font-family: $base-font-family
+    @if not $strict-normalize or $legacy-support-for-ie6 or $legacy-support-for-ie7
+        font-size: 100% * ($base-font-size / 16px)
+
+    -ms-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%
+
+    @if not $strict-normalize
+        // Establish a vertical rhythm unit using $base-line-height.
+        @include adjust-leading-to(1)
